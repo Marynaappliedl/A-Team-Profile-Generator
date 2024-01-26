@@ -60,16 +60,17 @@ async function Menu() {
       { name: "email", type: "input", message: "What`s your email?" },
       { name: "ID", type: "input", message: "What`s your ID?" },
       { name: "github", type: "input", message: "What`s your github?" }
-    );
+  );
+  console.log(engineerResponse);
     const engineer = new Engineer(
       engineerResponse.name,
-      engineerResponse.id,
+      engineerResponse.ID,
       engineerResponse.email,
       engineerResponse.github
     );
     teamMembers.push(engineer);
 
-    Menu;
+    Menu();
   } else if (response.action === "addIntern") {
     const internResponse = await inquirer.prompt(
       {
@@ -83,7 +84,7 @@ async function Menu() {
     );
     const intern = new Intern(
       internResponse.name,
-      internResponse.id,
+      internResponse.ID,
       internResponse.email,
       internResponse.school
     );

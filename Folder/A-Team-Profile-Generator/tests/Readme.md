@@ -22,5 +22,7 @@ SO THAT I have quick access to their emails and GitHub profiles
 ## License
 N/A
 ## Sources
-Working on this project, I used such sources: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function , https://stackoverflow.com/questions/3884281/what-does-the-function-then-mean-in-javascript , https://www.w3schools.com/js/js_async.asp , https://github.com/Marynaappliedl/Readme-generator/tree/main/local my code for a README generator and I was helped by the instructor Erik from the EDX platform.
+Working on this project, I used such sources: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function , https://stackoverflow.com/questions/3884281/what-does-the-function-then-mean-in-javascript , https://www.w3schools.com/js/js_async.asp , https://github.com/Marynaappliedl/Readme-generator/tree/main/local my code for a README generator and I was helped by the instructor Erik from the EDX platform. Also, I used git
+## A Deployed code:
+![Alt text](image.png)
 A link to my repository: https://github.com/Marynaappliedl/A-Team-Profile-Generator
