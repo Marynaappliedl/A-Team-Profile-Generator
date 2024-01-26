@@ -19,10 +19,13 @@ SO THAT I have quick access to their emails and GitHub profiles
 6.Make sure to also download Inquirer.js by entering 'npm install inquirer' in your terminal in the root directory of the project. 
 7.Run node index.js in your terminal to launch the application. 
 8.To make sure the Jest tests work, run npm run test and inspect what the CLI returns.
+## Usage
+This board is used to track the employees necessary information and have a quick access to it. Currently, only the manager division works perfect, the other two have a bug which I have not found yet, so the information for them is unavailable.
 ## License
 N/A
 ## Sources
 Working on this project, I used such sources: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function , https://stackoverflow.com/questions/3884281/what-does-the-function-then-mean-in-javascript , https://www.w3schools.com/js/js_async.asp , https://github.com/Marynaappliedl/Readme-generator/tree/main/local my code for a README generator and I was helped by the instructor Erik from the EDX platform. Also, I used git
 ## A Deployed code:
 ![Alt text](image.png)
+![Alt text](<Screenshot 2024-01-26 174223.png>)
 A link to my repository: https://github.com/Marynaappliedl/A-Team-Profile-Generator

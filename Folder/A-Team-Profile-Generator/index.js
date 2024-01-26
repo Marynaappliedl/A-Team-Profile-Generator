@@ -18,7 +18,7 @@ async function gatherManagerInfo() {
     {
       type: "input",
       name: "id",
-      message: "Enter the team manager's ID:",
+      message: "Enter the team manager's id:",
     },
     {
       type: "input",
@@ -40,7 +40,7 @@ async function gatherManagerInfo() {
   );
 
   teamMembers.push(manager);
-Menu()
+await Menu();
   return managerInfo;
 }
 async function Menu() {
@@ -58,19 +58,19 @@ async function Menu() {
         message: "What`s your name?",
       },
       { name: "email", type: "input", message: "What`s your email?" },
-      { name: "ID", type: "input", message: "What`s your ID?" },
+      { name: "id", type: "input", message: "What`s your id?" },
       { name: "github", type: "input", message: "What`s your github?" }
   );
   console.log(engineerResponse);
     const engineer = new Engineer(
       engineerResponse.name,
-      engineerResponse.ID,
+      engineerResponse.id,
       engineerResponse.email,
       engineerResponse.github
     );
     teamMembers.push(engineer);
 
-    Menu();
+  await Menu();
   } else if (response.action === "addIntern") {
     const internResponse = await inquirer.prompt(
       {
@@ -79,17 +79,17 @@ async function Menu() {
         message: "What`s your name?",
       },
       { name: "email", type: "input", message: "What`s your email?" },
-      { name: "ID", type: "input", message: "What`s your ID?" },
+      { name: "id", type: "input", message: "What`s your id?" },
       { name: "school", type: "input", message: "What`s your school?" }
     );
     const intern = new Intern(
       internResponse.name,
-      internResponse.ID,
+      internResponse.id,
       internResponse.email,
       internResponse.school
     );
     teamMembers.push(intern);
-    Menu();
+    await Menu();
   } else if (response.action === "finish") {
     const HTML = render(teamMembers);
     fs.writeFileSync("./src/team.html", HTML);
