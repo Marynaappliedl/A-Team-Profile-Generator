@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const path = require("path");
-
+const render = require("./tests/page-template");
 const Manager = require("./lib/teamManager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
@@ -40,7 +40,7 @@ async function gatherManagerInfo() {
   );
 
   teamMembers.push(manager);
-
+Menu()
   return managerInfo;
 }
 async function Menu() {
@@ -51,30 +51,47 @@ async function Menu() {
     choices: ["addEngineer", "addIntern", "finish"],
   });
   if (response.action === "addEngineer") {
-    const engineerResponse = await inquierer.prompt(
+    const engineerResponse = await inquirer.prompt(
       {
         name: "name",
         type: "input",
         message: "What`s your name?",
       },
-      { name: "email", type: "input", message: "What`s your email?" },{ name: "ID", type: "input", message: "What`s your ID?" },{ name: "github", type: "input", message: "What`s your github?" }
-      );
-      const engineer = new Engineer(engineerResponse.name,engineerResponse.id,engineerResponse.email,engineerResponse.github);
-  teamMembers.push(Engineer);
-  
-  Menu
-    } else if (response.action === "addIntern") {
-    const internResponse = await inquierer.prompt(
-      {
-        name: "name",
-        type: "input",
-        message: "What`s your name?",
-      },
-      { name: "email", type: "input", message: "What`s your email?" },{ name: "ID", type: "input", message: "What`s your ID?" },{ name: "school", type: "input", message: "What`s your school?" }
+      { name: "email", type: "input", message: "What`s your email?" },
+      { name: "ID", type: "input", message: "What`s your ID?" },
+      { name: "github", type: "input", message: "What`s your github?" }
     );
-    teamMembers.push(Intern);
-  Menu()
-  } else if (response.action === "finish") {
+    const engineer = new Engineer(
+      engineerResponse.name,
+      engineerResponse.id,
+      engineerResponse.email,
+      engineerResponse.github
+    );
+    teamMembers.push(engineer);
 
+    Menu;
+  } else if (response.action === "addIntern") {
+    const internResponse = await inquirer.prompt(
+      {
+        name: "name",
+        type: "input",
+        message: "What`s your name?",
+      },
+      { name: "email", type: "input", message: "What`s your email?" },
+      { name: "ID", type: "input", message: "What`s your ID?" },
+      { name: "school", type: "input", message: "What`s your school?" }
+    );
+    const intern = new Intern(
+      internResponse.name,
+      internResponse.id,
+      internResponse.email,
+      internResponse.school
+    );
+    teamMembers.push(intern);
+    Menu();
+  } else if (response.action === "finish") {
+    const HTML = render(teamMembers);
+    fs.writeFileSync("./src/team.html", HTML);
   }
 }
+gatherManagerInfo();
