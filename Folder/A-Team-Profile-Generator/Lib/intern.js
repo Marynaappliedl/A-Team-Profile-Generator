@@ -1,14 +1,18 @@
-const Employee = require("./employee"); //referencing to the parent class of an employee to expand it further
+const Employee = require('./Employee');
+
 class Intern extends Employee {
   constructor(name, id, email, school) {
-    super(name, id, email); //inherit name,id,class from an Employee class
+    super(name, id, email);
     this.school = school;
   }
+
   getRole() {
-    return "Intern";
+    return 'Intern';
   }
-  getSchool(){
-    return school;
+
+  getSchool() {
+    return this.school;
   }
 }
+
 module.exports = Intern;
