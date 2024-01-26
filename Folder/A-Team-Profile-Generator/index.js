@@ -60,6 +60,14 @@ async function Menu() {
       { name: "email", type: "input", message: "What`s your email?" },{ name: "ID", type: "input", message: "What`s your ID?" },{ name: "github", type: "input", message: "What`s your github?" }
     );
   } else if (response.action === "addIntern") {
+    const internResponse = await inquierer.prompt(
+      {
+        name: "name",
+        type: "input",
+        message: "What`s your name?",
+      },
+      { name: "email", type: "input", message: "What`s your email?" },{ name: "ID", type: "input", message: "What`s your ID?" },{ name: "school", type: "input", message: "What`s your school?" }
+    );
   } else if (response.action === "finish") {
   }
 }
